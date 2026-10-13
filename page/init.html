@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Character AI</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="body">
+    <div class="loading" aria-label="Loading" role="status">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <main id="app" hidden>
+      <div class="card">
+        <div class="wrapper">
+          <img
+            src="/images/doto.jpg"
+            class="cover-image"
+            alt="Character background"
+          />
+        </div>
+        <img src="/images/umatitle.png" class="title" alt="Character" />
+
+        <img
+          src="/images/doto-nobg.png"
+          class="character"
+          alt="Character"
+        />
+      </div>
+      
+    </main>
+
+    <script type="module" src="/dist/backend.js"></script>
+
+    <script>
+      const loading = document.querySelector(".loading");
+      const app = document.getElementById("app");
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          app.hidden = false;
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              app.classList.add("fade-in");
+              loading.classList.add("fade-out");
+            });
+          });
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
