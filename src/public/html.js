@@ -19,6 +19,8 @@ async function clickCard(card) {
   await sleep(500);
   titleContainer.classList.add("fade-out");
   card.classList.add("fade-out");
+  document.body.style.transition = "background-color 0.5s ease";
+  document.body.style.backgroundColor = getComputedStyle(card).backgroundColor;
   await sleep(500);
   window.location.href = `/characters/${cardId}`;
 }
