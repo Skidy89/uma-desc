@@ -7,7 +7,6 @@ const app = document.getElementById("app");
 const titleContainer = document.querySelector(".title-container");
 
 async function clickCard(card) {
-
   const cardId = card.id;
 
   card.style.viewTransitionName = `character-${cardId}`;
@@ -21,8 +20,7 @@ async function clickCard(card) {
   titleContainer.classList.add("fade-out");
   card.classList.add("fade-out");
   await sleep(500);
-  window.location.href = `characters/${cardId}/index.html`;
-
+  window.location.href = `/characters/${cardId}`;
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -35,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   setTimeout(() => {
     app.hidden = false;
     titleContainer.hidden = false;
@@ -49,5 +47,5 @@ window.addEventListener("load", () => {
         app.classList.add("fade-in");
       });
     });
-  }, 2000);
+  }, 500);
 });

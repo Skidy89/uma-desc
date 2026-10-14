@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17131d" />
+    <meta name="description" content="Chat with Meisho Doto." />
+    <base href="/characters/meisho/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Meisho Doto · Uma Desc</title>
+  </head>
+  <body class="body" data-character-id="meisho">
+    <div class="scene-glow" aria-hidden="true"></div>
+    <img src="../../images/meisho/bg.jpg" class="background-image" id="bg" alt="" hidden />
+
+    <main class="content" aria-label="Chat with Meisho Doto">
+      <img id="character-full" src="../../images/meisho/doto-full.png" class="character-full" alt="Meisho Doto" hidden />
+      <header class="title" id="title" hidden>
+        <p class="eyebrow">Uma Musume · The timid champion</p>
+        <h1 class="title-text">Meisho Doto</h1>
+        <p class="subtitle">“Oh no... Someone like me shouldn't be racing... But still...”</p>
+      </header>
+
+      <section class="chat-box" id="chat-box" aria-label="Conversation" hidden>
+        <div class="chat-header">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div class="chat-heading">
+            <h2>Meisho Doto</h2>
+            <p>Always trying her best</p>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+          <div class="message character-message" data-initial-greeting>
+            <div class="message-content">
+              <span class="message-name">Meisho Doto</span>
+              <div class="message-bubble">H-hello...! Um, I hope I'm not bothering you. What would you like to talk about?</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="chat-typing" id="chat-typing" aria-live="polite" hidden>Meisho is thinking<span class="typing-dots" aria-hidden="true"><i></i><i></i><i></i></span></p>
+        <form class="chat-input-area" id="chat-form">
+          <label class="visually-hidden" for="chat-input">Message Meisho</label>
+          <input id="chat-input" name="message" type="text" maxlength="2000" placeholder="Write a message..." autocomplete="off" />
+          <button type="submit" aria-label="Send message" title="Send message"><span aria-hidden="true">↑</span></button>
+        </form>
+      </section>
+    </main>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>

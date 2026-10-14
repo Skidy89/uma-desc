@@ -1,1 +1,7 @@
 /.env
+node_modules/
+*.rar
+dist/
+data/
+package-lock.json
+dev

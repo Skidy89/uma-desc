@@ -1,0 +1,46 @@
+{
+  "name": "uma-chat",
+  "version": "0.0.1",
+  "description": "a simple uma chat with node-character-ai",
+  "keywords": [
+    "ia"
+  ],
+  "homepage": "https://github.com/Skidy89/uma-desc#readme",
+  "bugs": {
+    "url": "https://github.com/Skidy89/uma-desc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skidy89/uma-desc.git"
+  },
+  "license": "MIT",
+  "author": "skidy89",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc && node src/copy-assets.mjs",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "prettier": "npx prettier --write **/*js && npx prettier --write **/*ts"
+  },
+  "allowScripts": {
+    "better-sqlite3": true
+  },
+  "dependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "approve": "^0.0.12",
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "node_characterai": "github:skidy89/node_characterai-2.0",
+    "scrips": "^1.2.0",
+    "scripts": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^26.6.5",
+    "prettier": "^3.9.10",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

@@ -13,12 +13,14 @@
     "moduleResolution": "nodenext",
     "noImplicitThis": true,
     "rootDir": "src",
+    "noEmitOnError": true,
+    "types": ["node"],
     "outDir": "dist",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "ES2019",
     "noUnusedParameters": false
   },
-  "include": ["types/**/*d.ts", "**/*.ts"],
+  "include": ["src/**/*.ts", "types/**/*d.ts"],
   "exclude": ["node_modules"]
 }
