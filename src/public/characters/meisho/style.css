@@ -46,25 +46,7 @@ body {
 .background-image.fade-in { opacity: 1; transform: scale(1); }
 .background-image[hidden] { display: none; }
 
-.scene-glow {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 17% 75%, rgb(193 155 225 / 22%), transparent 42%),
-    linear-gradient(110deg, rgb(20 15 28 / 18%), rgb(13 11 17 / 62%));
-}
-.scene-glow::after {
-  position: absolute;
-  content: "";
-  inset: 0;
-  opacity: .16;
-  background-image: radial-gradient(#fff 0.7px, transparent 0.7px);
-  background-size: 46px 46px;
-  mask-image: linear-gradient(110deg, #000, transparent 68%);
-  animation: shimmer 8s ease-in-out infinite alternate;
-}
+
 
 .character-full {
   position: fixed;
