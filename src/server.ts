@@ -133,7 +133,8 @@ import { readFile } from "node:fs/promises";
     },
   );
 
+ 
   app.listen(port, "0.0.0.0", () => {
-    console.log(`serving on http://localhost:${port}`);
-  });
+      console.log("HTTPS server started");
+    });
 })();

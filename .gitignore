@@ -5,3 +5,7 @@ dist/
 data/
 package-lock.json
 dev
+cert
+cert/
+*.pm
+*.pem

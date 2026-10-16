@@ -221,13 +221,18 @@ body:has(.card:hover) .card:not(:hover) {
   bottom: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center bottom;
+
   opacity: 0;
   z-index: 3;
-  transform: translate3d(0, 50px, 0) scale(0.9);
+
+  transform: translate3d(0, 50px, 0) scale(1);
+
   transition:
     transform var(--dur) var(--ease),
     opacity var(--dur) var(--ease);
+
   pointer-events: none;
   border-radius: 12px;
 }

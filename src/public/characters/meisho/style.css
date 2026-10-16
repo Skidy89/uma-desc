@@ -43,6 +43,7 @@ body {
   transform: scale(1.04);
   transition: opacity 1.4s ease, transform 12s ease-out;
 }
+
 .background-image.fade-in { opacity: 1; transform: scale(1); }
 .background-image[hidden] { display: none; }
 

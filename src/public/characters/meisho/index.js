@@ -14,7 +14,9 @@ const charid = document.body.dataset.charid || "meisho";
 const url = `/api/characters/${encodeURIComponent(charid)}`;
 const skey = `conversation:${charid}`;
 // dont forgot to change this to crypto.randomUUID(), until i got my https server running :c
-const conversationId = localStorage.getItem(skey) || `${Date.now()}-${Math.random().toString(36).slice(2)}`;;
+const conversationId =
+  localStorage.getItem(skey) ||
+  `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
 localStorage.setItem(skey, conversationId);
 

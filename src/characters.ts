@@ -14,6 +14,12 @@ export const characters: Record<string, Character> = {
     view: "characters/meisho/meisho.html",
     client: meishoClient,
   },
+  oguri: {
+    id: "oguri",
+    name: "Oguri",
+    view: "characters/oguri/oguri.html",
+    client: meishoClient,
+  }
 } as const;
 
 export type CharacterId = keyof typeof characters;
