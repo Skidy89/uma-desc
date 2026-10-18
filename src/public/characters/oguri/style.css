@@ -1,3 +1,39 @@
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 650ms;
+  animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+}
+.black-page-trans {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #111;
+    opacity: 1;
+    transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+}
 .background-image {
   position: fixed;
   inset: -2%;
@@ -323,3 +359,169 @@ body::after {
 
 
 
+.hero {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    overflow: clip;
+    z-index: 1;
+}
+
+.reveal-on [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+.reveal-on [data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+.page-sections {
+  position: relative;
+  z-index: 5;
+  background: #000;
+  color: #fff;
+  padding: 4rem 1.5rem 6rem;
+  font-family: "Inter", sans-serif;
+}
+
+
+.page-sections::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;         
+  height: 40vh;          
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(0 0 0 / 12%) 25%,
+    rgb(0 0 0 / 65%) 75%,
+    #000 100%
+  );
+  pointer-events: none;  
+}
+.page-sections section {
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+}
+.page-sections h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: .75rem;
+}
+.gallery a { display: block; cursor: zoom-in; }
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: .5rem;
+  transition: transform .3s;
+}
+.gallery a:hover img { transform: scale(1.03); }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: linear-gradient(
+  to top,
+  #000 0%,
+  rgb(0 0 0 / 90%) 15%,
+  rgb(0 0 0 / 55%) 40%,
+  rgb(0 0 0 / 15%) 75%,
+  transparent 100%
+);
+  display: grid;
+  place-items: center;
+  cursor: zoom-out;
+}
+.lightbox img { max-width: 92vw; max-height: 92vh; border-radius: .5rem; }
+
+
+#stats .highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .75rem;
+  margin-bottom: .75rem;
+}
+
+#stats .highlight {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 5%);
+  border: 1px solid rgb(255 255 255 / 10%);
+  transition: transform .3s, border-color .3s;
+}
+#stats .highlight:hover {
+  transform: translateY(-3px);
+  border-color: rgba(17, 16, 20, 0.5);
+}
+
+#stats .highlight b {
+  font: 600 2.4rem/1 "Oswald", sans-serif;
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#stats .highlight span {
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 60%);
+}
+
+
+#stats .highlight-wide { grid-column: 1 / -1; }
+#stats .highlight-wide b { font-size: 2rem; }
+
+
+#stats .facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0 2rem;
+  margin: 0;
+}
+
+#stats .facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+#stats .facts dt {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .85rem;
+  color: rgb(255 255 255 / 55%);
+}
+
+#stats .facts dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 500;
+}
+
+
+@media (max-width: 600px) {
+  #stats .highlights { grid-template-columns: repeat(2, 1fr); }
+}

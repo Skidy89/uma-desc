@@ -1,123 +1,307 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="wip!" />
-    <base href="/characters/oguri/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Oguri cap · Uma Desc</title>
-  </head>
-  <body class="body" data-character-id="oguri">
-    <img src="../../images/oguri/bg.jpg" class="background-image" id="bg" alt="" />
-    <div class="carousel">
-        <div class="group">
-            <div class="card">
-              <img src="../../images/oguri/1.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/2.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/3.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/4.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/5.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/6.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-        </div>
-        <div aria-hidden class="group">
-            <div class="card">
-              <img src="../../images/oguri/1.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/2.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/3.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/4.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/5.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/6.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-        </div>
-    </div>
-    <div class="carousel-bottom">
-        <div class="group-bottom">
-            <div class="card">
-              <img src="../../images/oguri/1.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/2.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/3.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/4.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/5.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/6.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-        </div>
-        <div aria-hidden class="group-bottom">
-            <div class="card">
-              <img src="../../images/oguri/1.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/2.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/3.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/4.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/5.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-            <div class="card">
-              <img src="../../images/oguri/6.jpg" class="card-image" id="card-image" alt="" />
-            </div>
-        </div>
-    </div>
-    <div class="character-container" onclick="toggleChat()">
-      <img src="../../images/oguri/OguriCapChibi1.webp"
-        class="character-chibi active"
-        id="chibi-1"
-        alt="Oguri Cap"
-      />
-      <img src="../../images/oguri/Oguri_Cap_Chibi1-2.webp"
-        class="character-chibi"
-        id="chibi-2"
-        alt="Oguri Cap"
-      />
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="wip!" />
 
-      <div class="comic-bubble" id="comic-bubble">
-        <span id="comic-text">...</span>
-      </div>
-    </div>
+      <base href="/characters/oguri/" />
 
-    <div class="chatbox" hidden></div>
-    <img id="character-full" src="../../images/oguri/nobg.png" class="character-full" alt="oguri cap" ><h1 class="character-name">Oguri cap</h1></img>
-    <div class="flash" hidden></div>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="index.js" ></script>
-  </body>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+      <link
+         href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="style.css" />
+
+      <title>Oguri cap · Uma Desc</title>
+   </head>
+
+   <body class="body" data-character-id="oguri">
+      <section class="hero">
+         <img
+            src="../../images/oguri/bg.jpg"
+            class="background-image"
+            id="bg"
+            alt=""
+         />
+
+         <div class="carousel">
+            <div class="group">
+               <div class="card">
+                  <img
+                     src="../../images/oguri/1.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/2.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/3.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/4.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/5.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/6.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+            </div>
+
+            <div class="group" aria-hidden="true">
+               <div class="card">
+                  <img
+                     src="../../images/oguri/1.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/2.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/3.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/4.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/5.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/6.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+            </div>
+         </div>
+
+         <div class="carousel-bottom">
+            <div class="group-bottom">
+               <div class="card">
+                  <img
+                     src="../../images/oguri/1.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/2.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/3.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/4.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/5.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/6.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+            </div>
+
+            <div class="group-bottom" aria-hidden="true">
+               <div class="card">
+                  <img
+                     src="../../images/oguri/1.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/2.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/3.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/4.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/5.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+               <div class="card">
+                  <img
+                     src="../../images/oguri/6.jpg"
+                     class="card-image"
+                     id="card-image"
+                     alt=""
+                  />
+               </div>
+            </div>
+         </div>
+
+         <div id="chibi-root" data-react-component="oguri-chibi"></div>
+
+         <div class="chatbox" hidden></div>
+
+         <img
+            id="character-full"
+            src="../../images/oguri/nobg.png"
+            class="character-full"
+            alt="Oguri Cap"
+         />
+
+         <h1 class="character-name">Oguri Cap</h1>
+      </section>
+
+       <div class="page-sections">
+  <section id="bio" data-reveal>
+    <h2>About Oguri Cap</h2>
+    <p>Known as the Gray Monster, Oguri Cap became a legendary racehorse loved by fans.
+      Oguri Cap (Japanese: オグリキャップ, Hepburn: Oguri Kyappu; 27 March 1985 – 3 July 2010) was a Japanese Thoroughbred racehorse and stud, sired by Dancing Cap. Oguri Cap was inducted into the Japan Racing Association Hall of Fame in 1991. A horse from the countryside who found success at the national level, he was known as a member of the "Heisei Big Three", a trio of racehorses who reignited interest in horse racing in Japan alongside Super Creek and Inari One.
+    </p>
+  </section>
+  <section id="stats" data-reveal>
+  <h2>Stats</h2>
+
+
+  <div class="highlights">
+    <div class="highlight"><b>32</b><span>Starts</span></div>
+    <div class="highlight"><b>12</b><span>Wins</span></div>
+    <div class="highlight"><b>7</b><span>Seconds</span></div>
+    <div class="highlight"><b>5</b><span>Thirds</span></div>
+    <div class="highlight highlight-wide">
+      <b>¥1,065,949,000</b>
+      <span>Earnings · approx. $9.5 million USD</span>
+    </div>
+  </div>
+
+  <dl class="facts">
+    <div><dt>Foaled</dt><dd>27 March 1985</dd></div>
+    <div><dt>Died</dt><dd>3 July 2010</dd></div>
+    <div><dt>Sex</dt><dd>Stallion</dd></div>
+    <div><dt>Color</dt><dd>Gray</dd></div>
+    <div><dt>Sire</dt><dd>Dancing Cap</dd></div>
+    <div><dt>Dam</dt><dd>White Narbi</dd></div>
+    <div><dt>Breeder</dt><dd>Hideo Kuribayashi</dd></div>
+    <div><dt>Owner</dt><dd>Hideo Kuribayashi</dd></div>
+    <div><dt>Trainer</dt><dd>Masahiro Sakaguchi</dd></div>
+  </dl>
+</section>
+
+  <section id="gallery" data-reveal>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <a href="https://upload.wikimedia.org/wikipedia/commons/c/c3/Oguri_Cap_in_Yushun_Stallion_station.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Oguri_Cap_in_Yushun_Stallion_station.jpg" alt="Oguri Cap 1" loading="lazy" /></a>
+    </div>
+  </section>
+</div>
+
+
+  <div data-react-component="lightbox"></div>
+  <div data-react-component="reveal"></div>
+
+      <div class="black-page-trans"></div>
+
+      <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+      <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+      <script src="/assets/umaworld.js" defer></script>
+      <script src="index.js"></script>
+   </body>
 </html>

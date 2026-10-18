@@ -19,7 +19,7 @@ export const characters: Record<string, Character> = {
     name: "Oguri",
     view: "characters/oguri/oguri.html",
     client: meishoClient,
-  }
+  },
 } as const;
 
 export type CharacterId = keyof typeof characters;

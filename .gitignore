@@ -9,3 +9,4 @@ cert
 cert/
 *.pm
 *.pem
+src/public/assetts/umaworld.js

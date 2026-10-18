@@ -18,9 +18,10 @@
   "type": "module",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc && node src/copy-assets.mjs",
+    "build": "tsc && vite build && node src/copy-assets.mjs",
     "start": "node dist/server.js",
-    "dev": "tsx watch src/server.ts",
+    "dev": "vite build && concurrently -k \"tsx watch src/server.ts\" \"vite\"",
+    "preview": "vite preview",
     "prettier": "npx prettier --write **/*js && npx prettier --write **/*ts"
   },
   "allowScripts": {

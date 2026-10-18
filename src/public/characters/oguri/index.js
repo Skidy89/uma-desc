@@ -1,66 +1,27 @@
-const chatbox = document.querySelector(".chatbox");
-const bubble = document.querySelector("#comic-bubble");
-const comicText = document.querySelector("#comic-text");
+const d = document.querySelector(".black-page-trans");
 
-const chibis = [
-    document.querySelector("#chibi-1"),
-    document.querySelector("#chibi-2")
-];
+function fadeOutBlackPage() {
+  d.style.display = "block";
+  d.style.opacity = "1";
 
-let currentChibi = 0;
-let bubbleTimeout;
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        d.style.opacity = "0";
 
-const facts = [
-    'People often called me "Gray Monster" or "Idol Horse"',
-    "I was one of the first horses to have official plush dolls!",
-    "I won 22 of 32 races with over ¥912 million in earnings!!",
-    "I'm just here meanwhile I add more stuff here!"
-];
+        d.addEventListener(
+          "transitionend",
+          (event) => {
+            if (event.propertyName !== "opacity") return;
 
-function setChibi(index) {
-    currentChibi = index;
-
-    chibis.forEach((chibi, i) => {
-        chibi.classList.toggle("active", i === index);
+            d.style.display = "none";
+            resolve();
+          },
+          { once: true },
+        );
+      });
     });
+  });
 }
 
-function changeChibi() {
-    setChibi(currentChibi === 0 ? 1 : 0);
-}
-
-function randomFact() {
-    comicText.textContent =
-        facts[Math.floor(Math.random() * facts.length)];
-}
-
-function showBubble() {
-    clearTimeout(bubbleTimeout);
-
-    randomFact();
-    bubble.classList.add("visible");
-
-    bubbleTimeout = setTimeout(() => {
-        bubble.classList.remove("visible");
-        bubbleTimeout = null;
-        setChibi(0);
-    }, 3000);
-}
-
-function toggleChat() {
-    if (bubble.classList.contains("visible")) {
-        showBubble();
-        return;
-    }
-
-    const isHidden = chatbox.hasAttribute("hidden");
-
-    if (isHidden) {
-        chatbox.removeAttribute("hidden");
-        changeChibi();
-    } else {
-        chatbox.setAttribute("hidden", "");
-    }
-
-    showBubble();
-}
+window.addEventListener("load", fadeOutBlackPage, { once: true });
