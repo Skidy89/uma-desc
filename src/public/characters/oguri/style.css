@@ -430,7 +430,45 @@ body::after {
   transition: transform .3s;
 }
 .gallery a:hover img { transform: scale(1.03); }
+.gallery p {
+  margin: .5rem 0 0;
+  font-size: .8rem;
+  color: rgb(255 255 255 / 60%);
+}
+.gallery p a {
+  color: rgb(255 255 255 / 60%);
+  text-decoration: underline;
+}
+.gallery p a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}   
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  padding: 0.85rem 1rem;
+  color: #d4d4d8;
+  background: #181818;
+  border: 1px solid #252525;
+  border-radius: 10px;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.list li:hover {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+  transform: translateX(3px);
+}
 .lightbox {
   position: fixed;
   inset: 0;
