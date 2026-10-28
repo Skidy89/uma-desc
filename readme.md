@@ -27,3 +27,9 @@ and thats all!
   <img src="screenshoots/4.PNG" width="250">
   <img src="screenshoots/5.PNG" width="250">
 </p>
+
+
+## disclaimer
+
+images and any other stuff arent mine, credits to their respective creators!
+im just using stuff for this silly page

@@ -258,8 +258,6 @@ body:has(.card:hover) .card:not(:hover) {
   transition: transform var(--dur) var(--ease);
 }
 
-
-
 @keyframes titleBlur {
   0% {
     filter: blur(1px) brightness(0.2);
@@ -299,8 +297,6 @@ body:has(.card:hover) .card:not(:hover) {
   border-radius: 50%;
   animation: spin 800ms linear infinite;
 }
-
-
 
 @keyframes spin {
   to {
@@ -393,8 +389,7 @@ body:has(.card.selected) .card:not(.selected) {
   width: 100%;
   max-width: 420px;
   cursor: default;
-  animation: selectedCardEnter 650ms
-    cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: selectedCardEnter 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .card.selected .wrapper {
@@ -587,7 +582,9 @@ body:has(.card.selected) .card:not(.selected) {
 .info-description {
   margin: 0;
   color: #ddd;
-  font: 16px/1.8 system-ui, sans-serif;
+  font:
+    16px/1.8 system-ui,
+    sans-serif;
 }
 
 .card-btn {
@@ -613,7 +610,6 @@ body:has(.card.selected) .card:not(.selected) {
     transform 200ms ease,
     box-shadow 200ms ease;
 }
-
 
 .card-btn:hover {
   background: #f0f0f0;
@@ -641,4 +637,63 @@ body:has(.card.selected) .card:not(.selected) {
   #character-info.visible {
     transition: none;
   }
+}
+
+.loading {
+  transition: opacity 0.5s;
+}
+.loading.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.title-container {
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.title-container.fade-in {
+  opacity: 1;
+}
+.title-container.fade-out {
+  opacity: 0;
+}
+
+#app {
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+#app.fade-in {
+  opacity: 1;
+}
+
+.card.in {
+  opacity: 1;
+  transform: none;
+}
+
+.card.dismissed {
+  opacity: 0;
+  filter: blur(6px) grayscale(1);
+  transform: scale(0.9);
+  pointer-events: none;
+}
+.card.selected {
+  transform: scale(1.05);
+  z-index: 5;
+}
+
+.card-details {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
+}
+.card-details.fade-in {
+  opacity: 1;
+  transform: none;
+}
+
+[hidden] {
+  display: none !important;
 }
