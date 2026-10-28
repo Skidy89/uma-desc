@@ -250,13 +250,19 @@ main .bar {
 }
 
 
+
 main .bar i {
   display: block;
   height: 100%;
   width: var(--v);
   background: #FF746C;
+  animation: fill 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i) * 0.12s); 
 }
 
+@keyframes fill {
+  from { width: 0; }
+}
 main .bar span {
   position: absolute;
   right: 5px;
@@ -267,4 +273,57 @@ main .bar i .fill {
   height: 100%;
   width: var(--v);
   background: #FF746C;
+}
+main .desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  background: #fcefe9;
+  border: 2px solid #FF746C;
+  box-shadow: 3px 3px 0 #7a3b37;
+  font-size: 14px;
+  text-align: center;
+  transition: transform .15s, box-shadow .15s;
+}
+main .desc[data-sound] {
+  cursor: pointer;
+}
+main .desc[data-sound]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #7a3b37;
+}
+main .desc[data-sound]:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #7a3b37;
+}
+
+main .desc[data-sound]:focus-visible {
+  outline: 3px dashed #7a3b37;
+  outline-offset: 3px;
+}
+
+main .desc img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+main .desc:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #7a3b37;
+}
+
+main .desc em {
+  font-size: 12px;
+  color: #7a3b37;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main .desc { transition: none; }
+}
+
+main .lead {
+  text-align: left;
 }

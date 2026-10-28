@@ -1,6 +1,6 @@
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const afterbg = "#110101";
-
+const luck = Math.random() < 0.5;
 async function transition() {
   const body = document.body;
   const grid = document.querySelector(".grid");
@@ -54,8 +54,8 @@ async function transition() {
     background.style.opacity = "1";
   }
   grid.hidden = false;
-    grid.style.opacity = "1";
-    grid.style.transition = "opacity 0.5s ease";
+  grid.style.opacity = "1";
+  grid.style.transition = "opacity 0.5s ease";
   await sleep(200);
 
   await flash.animate(
@@ -74,3 +74,28 @@ async function transition() {
 
 document.addEventListener("DOMContentLoaded", transition);
 
+const el = document.querySelectorAll("[data-sound]");
+const superluck = Math.random() < 0.35;
+if (superluck) {
+  console.log("super luckyyy!");
+  function replaceChibisLuck() {
+    const stars = document.querySelectorAll(".stars");
+    stars.forEach((star) => {
+      const chibi = star.querySelector("img");
+      if (chibi) {
+        chibi.src = `../../images/goldship/trash.png`;
+      }
+    });
+  }
+  replaceChibisLuck();
+  el.forEach((element) => {
+    // pfffffffffffft
+    const sound = element.dataset.sound;
+    const audio = new Audio(sound);
+    audio.preload = "auto";
+    element.addEventListener("mouseenter", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  });
+}
