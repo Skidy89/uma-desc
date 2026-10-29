@@ -25,7 +25,7 @@ const chibis = {
     idle: "/images/goldship/chibi1.webp",
     hoverbtn: "/images/goldship/chibi2.webp",
     name: "Gold Ship",
-    description: `She is known for her playful and mischievous personality, making her a fan favorite. This card will redirect you to her page, with a silly game to interact`,
+    description: `She is known for her playful and mischievous personality, making her a fan favorite. This page will show you information about her.`,
     url: "/characters/goldship",
   },
 };

@@ -1,6 +1,17 @@
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const afterbg = "#110101";
 const luck = Math.random() < 0.5;
+
+const btn = document.querySelector(".toggle-button");
+const trivia = document.getElementById("trivia-panel");
+
+btn.addEventListener("click", () => {
+  const open = trivia.classList.toggle("open");
+  btn.setAttribute("aria-expanded", open);
+  btn.classList.toggle("open", open);
+  trivia.hidden = !open;
+  btn.textContent = open ? "Hide Trivia" : "Show Trivia";
+});
 async function transition() {
   const body = document.body;
   const grid = document.querySelector(".grid");
@@ -73,6 +84,24 @@ async function transition() {
 }
 
 document.addEventListener("DOMContentLoaded", transition);
+
+const appearanceLightbox = document.querySelector(".appearance-lightbox");
+const lightboxImage = appearanceLightbox.querySelector("img");
+document.querySelectorAll(".gallery-thumb").forEach((thumbnail) => {
+  thumbnail.addEventListener("click", () => {
+    lightboxImage.src = thumbnail.dataset.fullImage;
+    lightboxImage.alt = thumbnail.dataset.fullAlt;
+    appearanceLightbox.showModal();
+  });
+});
+appearanceLightbox
+  .querySelector(".lightbox-close")
+  .addEventListener("click", () => {
+    appearanceLightbox.close();
+  });
+appearanceLightbox.addEventListener("click", (event) => {
+  if (event.target === appearanceLightbox) appearanceLightbox.close();
+});
 
 const el = document.querySelectorAll("[data-sound]");
 const superluck = Math.random() < 0.35;

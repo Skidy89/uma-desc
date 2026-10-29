@@ -31,6 +31,11 @@ body.transitioning {
   animation: animateBg 30s ease-in-out infinite;
 }
 
+@keyframes animateBg {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50%      { filter: hue-rotate(15deg); }
+}
+
 .background-image {
   position: absolute;
   inset: 0;
@@ -214,7 +219,7 @@ li {
 p {
   line-height: 1.5;
   margin: 0 0 15px 0;
-  font-family: Arial, Helvetica, sans-serif; /* Texto limpio sin remates como la imagen */
+  font-family: Arial, Helvetica, sans-serif; /* Texto limpio sin remates como la imagen (from copilot autocomplete lol)*/
   font-size: 14px;
 }
 
@@ -229,6 +234,7 @@ main .section-desc {
   font-size: 14px;
   margin-bottom: 10px;
   justify-content: center;
+  align-items: center;
   padding: 10px;
   object-fit: cover;
   overflow: hidden;
@@ -326,4 +332,168 @@ main .desc em {
 
 main .lead {
   text-align: left;
+}
+
+main .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+  justify-content: center;
+}
+main .gallery-thumb {
+  width: 68px;
+  height: 68px;
+  padding: 4px;
+  border: 2px solid #ff746c;
+  background: linear-gradient(145deg, #321528, #6c3045);
+  box-shadow: 2px 2px 0 #7a3b37;
+  cursor: zoom-in;
+  transition: transform .15s ease, box-shadow .15s ease;
+  justify-content: center;
+  align-items: center;
+}
+main .gallery-thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 0 #7a3b37;
+}
+main .gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
+}
+main .gallery-thumb:focus-visible {
+  outline: 3px dashed #7a3b37;
+  outline-offset: 3px;
+}
+.appearance-lightbox {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  z-index: 1000;
+}
+.appearance-lightbox::backdrop {
+  background: rgba(17, 1, 1, .88);
+  backdrop-filter: blur(4px);
+}
+.appearance-lightbox > img {
+  display: block;
+  max-width: min(90vw, 900px);
+  max-height: 86vh;
+  object-fit: contain;
+  border: 2px solid #ff746c;
+  background: #321528;
+  box-shadow: 5px 5px 0 #7a3b37;
+}
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #ff746c;
+  border-radius: 50%;
+  background: #fcefe9;
+  color: #401c31;
+  font: bold 24px/1 Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #7a3b37;
+  justify-content: center;
+  align-items: center;
+}
+
+main .toggle-button {
+  font: inherit;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  background:#fcefe9;
+  color: #000;
+  border: 2px solid #FF746C;
+  box-shadow: 3px 3px 0 #7a3b37;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main #trivia-list.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+main #trivia-list.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+main #trivia-list {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fcefe9;
+  border: 2px solid #FF746C;
+  box-shadow: 3px 3px 0 #7a3b37;
+}
+main #trivia-list li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+main .trivia-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows .4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s .4s;
+}
+main .trivia-wrap[hidden] {
+  display: none;
+}
+
+main .trivia-wrap.open {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows .4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+}
+
+main .trivia-wrap > ul {
+  overflow: hidden;
+  min-height: 0; 
+}
+main .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+main .toggle-button:hover  { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--shadow); }
+main .toggle-button:active { transform: translate(3px, 3px);   box-shadow: 0 0 0 var(--shadow); }
+main .toggle-button:focus-visible { outline: 3px dashed var(--shadow); outline-offset: 3px; }
+main .toggle-button[aria-expanded="true"] { background: var(--paper); color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .stars span, .background { animation: none; }
+  main .bar i { animation: none; }
+  main .trivia-wrap, main .trivia-wrap.open { transition-duration: 0.01ms; }
 }

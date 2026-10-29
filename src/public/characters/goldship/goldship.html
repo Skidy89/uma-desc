@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>goldshi</title>
+  <title>Gold Ship</title>
   <link rel="icon" type="image/png" href="../../images/goldship/chibi1.webp">
   <base href="/characters/goldship/">
   <link rel="stylesheet" href="style.css">
@@ -26,6 +26,7 @@
       <span><img src="/images/oguri/OguriCapChibi1.webp" alt=""></span>
     </div>
   </section>
+  
   <div class="grid" hidden>
     <main class="main">
       <div class="title">Gold Ship</div>
@@ -37,31 +38,61 @@
         <div class="stat"><span>Power</span><div class="bar"><i style="--v:80%; --i:3"></i></div></div>
         <div class="stat"><span>Guts</span><div class="bar"><i style="--v:60%; --i:4"></i></div></div>
         <div class="stat"><span>Wit</span><div class="bar"><i style="--v:30%; --i:5"></i></div></div>
-        <div class="stat"><span>Training</span><div class="bar"><i style="--v:1%; --i:6"></i></div></div>
+        <div class="stat"><span>Training</span><div class="bar"><i style="--v:0.001%; --i:6"></i></div></div>
       </div>
       <article class="desc" role="button" aria-label="Gold Ship" tabindex="0" data-sound="/audio/waa.mp3">
         <img src="/images/goldship/chibi2.webp" alt="" loading="lazy">
         <strong>Gold Ship</strong>
         <em>"doing anything but training"</em>
-        
+        <em>She seems to get along with anyone and everyone, but it is unclear just how she views her bonds with others. Truly, one could call her Tracen's greatest mischief-maker.</em>
       </article>
      
       <div class="section-box full-width">
         <h2 class="section-title">Appearance</h2>
         <p class="lead">One of the tallest Umamusume at Tracen Academy, with a noticeably athletic build. Her whole look is inspired by horse tack!</p>
+        <div class="gallery" aria-label="Gold Ship appearance gallery">
+          <button class="gallery-thumb" type="button" aria-label="View full image: Gold Ship in her red racewear" data-full-image="/images/goldship/nobg.png" data-full-alt="Gold Ship in her red racewear">
+            <img src="/images/goldship/nobg.png" alt="" loading="lazy">
+          </button>
+          <button class="gallery-thumb" type="button" aria-label="View full image: Gold Ship in her academy outfit" data-full-image="/images/goldship/academy.webp" data-full-alt="Gold Ship in her academy outfit">
+            <img src="/images/goldship/academy.webp" alt="" loading="lazy">
+          </button>
+          <button class="gallery-thumb" type="button" aria-label="View full image: Gold Ship in her stage outfit" data-full-image="/images/goldship/stage.webp" data-full-alt="Gold Ship in her stage outfit">
+            <img src="/images/goldship/stage.webp" alt="" loading="lazy">
+          </button>
+        </div>
       </div>
-      <div class="section-box">
+      <div class="section-box full-width">
         <h2 class="section-title">About</h2>
         <p>An unpredictable firebrand born with an extra helping of free spirit. She's prone to some dramatic swings in mood and motivation—one moment she could be setting up an elaborate punchline, and in the next you would be hard-pressed to get her to move. She seems to get along with anyone and everyone, but it is unclear just how she views her bonds with others. Truly, one could call her Tracen's greatest mischief-maker.</p>
       </div>
       <div class="section-box">
-        <h2 class="section-title">About</h2>
-        <p>placheholder</p>
+        <h2 class="section-title center">Trivia</h2>
+        <p class="section-description center">
+          A few fun facts about Gold Ship!!
+        </p>
+        <button class="toggle-button" aria-expanded="false" aria-controls="trivia-panel">Show Trivia</button>
+        <div class="trivia-wrap" id="trivia-panel" hidden>
+        <ul id="trivia-list">
+         <li><strong>Likes:</strong> Moving facial muscles</li>
+         <li><strong>Dislikes:</strong> Staying still</li>
+         <li><strong>Secret:</strong> She's scarily good at trivia quizzes.</li>
+         <li>She has her own YouTube channel called PakaTube (ぱかチューブっ!).</li>
+         <li>She seems to like hot mustard.</li>
+         <li>She seems to be capable of speaking English.</li>
+         <li>She never states what year she's in, and it's impossible to tell.</li>
+         <li>In the game, Gold Ship is one of a few characters to restrict training to one skill for one turn after triggering the "Golshi the Fickle Maiden ☆" event.</li>
+        </ul>
+        </div>
       </div>
       
     </main>
   </div>
 
+  <dialog class="appearance-lightbox" aria-label="Full size image">
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img src="" alt="">
+  </dialog>
 
 
   <script src="index.js"></script>
