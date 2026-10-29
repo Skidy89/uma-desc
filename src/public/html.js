@@ -11,14 +11,14 @@ const chibis = {
     idle: "/images/meisho/MeishoChibi1.webp",
     hoverbtn: "/images/meisho/MeishoChibi2.webp",
     name: "Meisho Doto",
-    description: `Meisho doto is a character from the popular game Uma Musume Pretty Derby. She is known for her speed and agility on the racetrack, making her a favorite among fans of the game. This card will redirect you to her page, with a chatbot where you can talk with her.`,
+    description: `Meisho Doto is a character from Uma Musume Pretty Derby. She is known for her speed and agility on the racetrack. Select Continue to visit her page and chat with her.`,
     url: "/characters/meisho",
   },
   oguri: {
     idle: "/images/oguri/OguriCapChibi1.webp",
     hoverbtn: "/images/oguri/Oguri_Cap_Chibi1-2.webp",
     name: "Oguri Cap",
-    description: `Also know as the "zombie" or "gray monster", this page will show you information about her.`,
+    description: `Also known as the "Zombie" or "Gray Monster," Oguri Cap is a fan-favorite racer. Select Continue to learn more about her.`,
     url: "/characters/oguri",
   },
   goldship: {
@@ -133,6 +133,11 @@ window.addEventListener("DOMContentLoaded", () => {
     card.style.viewTransitionName = `character-${card.id}`;
     card.addEventListener("click", async () => {
       await clickCard(card);
+    });
+    card.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      void clickCard(card);
     });
   });
 

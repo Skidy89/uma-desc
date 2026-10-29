@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,10 +10,13 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="/images/icon.svg" />
-    <meta name="description" content="uma desc!" />
-    <meta name="keywords" content="uma, uma musume, uma musume pretty derby, uma musume game, uma musume anime" />
+    <meta name="description" content="Browse Uma Musume character profiles and discover more about your favorites." />
+    <meta
+      name="keywords"
+      content="uma, uma musume, uma musume pretty derby, uma musume game, uma musume anime"
+    />
     <meta name="author" content="skidy89" />
-    <title>uma desc!</title>
+    <title>Uma Desc — Character Profiles</title>
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -21,21 +24,22 @@
   <body class="body">
     <div class="loading" aria-label="Loading" role="status">
       <div class="loading-spinner">
-        <!-- uhh, the white loading web does have lil white stuff of the background, wont use it till i change the bg -->
         <div class="loading-t">Loading...</div>
       </div>
     </div>
     <div class="title-container" hidden>
-      <h1 class="title-text">Choose your <span class="title-highlight">uma</span></h1>
+      <h1 class="title-text">
+        Choose your <span class="title-highlight">uma</span>
+      </h1>
     </div>
 
     <main id="app" hidden>
-      <div class="card" id="meisho" style="background-color: #17131d;">
+      <div class="card" id="meisho" role="button" tabindex="0" aria-label="Choose Meisho Doto" style="background-color: #17131d">
         <div class="wrapper">
           <img
             src="/images/meisho/doto.jpg"
             class="cover-image"
-            alt="Character background"
+            alt="Meisho Doto at dusk"
             loading="lazy"
           />
         </div>
@@ -43,16 +47,16 @@
         <img
           src="/images/meisho/doto-nobg.png"
           class="character"
-          alt="Character"
+          alt="Meisho Doto"
           loading="lazy"
         />
       </div>
-      <div class="card" id="oguri" style="background-color: #111;">
+      <div class="card" id="oguri" role="button" tabindex="0" aria-label="Choose Oguri Cap" style="background-color: #111">
         <div class="wrapper">
           <img
             src="/images/oguri/charbg.jpg"
             class="cover-image"
-            alt="Character background"
+            alt="Oguri Cap character artwork"
             loading="lazy"
           />
         </div>
@@ -60,16 +64,16 @@
         <img
           src="/images/oguri/nobg.png"
           class="character"
-          alt="Character"
+          alt="Oguri Cap"
           loading="lazy"
         />
       </div>
-      <div class="card" id="goldship" style="background-color: #110101;">
+      <div class="card" id="goldship" role="button" tabindex="0" aria-label="Choose Gold Ship" style="background-color: #110101">
         <div class="wrapper">
           <img
             src="/images/goldship/bg.jpg"
             class="cover-image"
-            alt="Character background"
+            alt="Gold Ship character artwork"
             loading="lazy"
           />
         </div>
@@ -77,16 +81,16 @@
         <img
           src="/images/goldship/nobg.png"
           class="character"
-          alt="Character"
+          alt="Gold Ship"
           loading="lazy"
         />
       </div>
-      <div class="card" id="doto4">
+      <div class="card" id="doto4" role="button" tabindex="0" aria-label="Choose Meisho Doto" style="background-color: #17131d">
         <div class="wrapper">
           <img
             src="/images/meisho/doto.jpg"
             class="cover-image"
-            alt="Character background"
+            alt="Meisho Doto at dusk"
             loading="lazy"
           />
         </div>
@@ -94,7 +98,7 @@
         <img
           src="/images/meisho/doto-nobg.png"
           class="character"
-          alt="Character"
+          alt="Meisho Doto"
           loading="lazy"
         />
       </div>
@@ -103,11 +107,14 @@
         <h1 class="info-name"></h1>
         <p class="info-description"></p>
         <button class="card-btn" type="button">
-          <img src="/images/meisho/MeishoChibi1.webp" alt="" class="card-btn-img">
-          continue
+          <img
+            src="/images/meisho/MeishoChibi1.webp"
+            alt=""
+            class="card-btn-img"
+          />
+          Continue
         </button>
       </section>
-
     </main>
 
     <script type="module" src="html.js"></script>

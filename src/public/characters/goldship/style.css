@@ -14,8 +14,14 @@
   box-sizing: border-box;
 }
 
-html, body { background: #110101; overflow-x: hidden; overflow-y: auto; height: auto; min-height: 100%; }
-
+html,
+body {
+  background: #110101;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100%;
+}
 
 body.transitioning {
   overflow: hidden;
@@ -32,8 +38,13 @@ body.transitioning {
 }
 
 @keyframes animateBg {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50%      { filter: hue-rotate(15deg); }
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(15deg);
+  }
 }
 
 .background-image {
@@ -161,21 +172,21 @@ main {
   gap: 20px;
   padding: 20px;
   margin: 0 auto;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 main .grid {
   position: relative;
   z-index: 1;
   min-height: 100vh;
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: center;
+  align-items: center;
 }
 
 main .title {
   grid-column: span 2;
   background-color: #fcefe9;
-  border: 2px solid #FF746C;
+  border: 2px solid #ff746c;
   padding: 15px;
   text-align: left;
   font-size: 24px;
@@ -185,7 +196,7 @@ main .title {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   text-transform: uppercase;
   text-align: center;
   z-index: 2;
@@ -193,21 +204,22 @@ main .title {
 
 main .section-box {
   background-color: #fcefe9;
-  border: 2px solid #FF746C;
+  border: 2px solid #ff746c;
   padding: 15px;
   text-align: left;
   font-size: 18px;
   letter-spacing: 1px;
   box-shadow: 4px 4px 0px #7a3b37;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 main .full-width {
   grid-column: span 2;
 }
 
-main ul, ol {
+main ul,
+ol {
   padding-left: 20px;
   margin: 0;
 }
@@ -219,7 +231,8 @@ li {
 p {
   line-height: 1.5;
   margin: 0 0 15px 0;
-  font-family: Arial, Helvetica, sans-serif; /* Texto limpio sin remates como la imagen (from copilot autocomplete lol)*/
+  font-family:
+    Arial, Helvetica, sans-serif; /* Texto limpio sin remates como la imagen (from copilot autocomplete lol)*/
   font-size: 14px;
 }
 
@@ -251,23 +264,23 @@ main .stat {
 
 main .bar {
   height: 12px;
-  border: 2px solid #FF746C;
+  border: 2px solid #ff746c;
   background: #fff;
 }
-
-
 
 main .bar i {
   display: block;
   height: 100%;
   width: var(--v);
-  background: #FF746C;
+  background: #ff746c;
   animation: fill 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--i) * 0.12s); 
+  animation-delay: calc(var(--i) * 0.12s);
 }
 
 @keyframes fill {
-  from { width: 0; }
+  from {
+    width: 0;
+  }
 }
 main .bar span {
   position: absolute;
@@ -278,7 +291,7 @@ main .bar span {
 main .bar i .fill {
   height: 100%;
   width: var(--v);
-  background: #FF746C;
+  background: #ff746c;
 }
 main .desc {
   display: flex;
@@ -287,11 +300,13 @@ main .desc {
   gap: 4px;
   padding: 12px 8px;
   background: #fcefe9;
-  border: 2px solid #FF746C;
+  border: 2px solid #ff746c;
   box-shadow: 3px 3px 0 #7a3b37;
   font-size: 14px;
   text-align: center;
-  transition: transform .15s, box-shadow .15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 main .desc[data-sound] {
   cursor: pointer;
@@ -327,7 +342,9 @@ main .desc em {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  main .desc { transition: none; }
+  main .desc {
+    transition: none;
+  }
 }
 
 main .lead {
@@ -349,7 +366,9 @@ main .gallery-thumb {
   background: linear-gradient(145deg, #321528, #6c3045);
   box-shadow: 2px 2px 0 #7a3b37;
   cursor: zoom-in;
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
   justify-content: center;
   align-items: center;
 }
@@ -384,7 +403,7 @@ main .gallery-thumb:focus-visible {
   z-index: 1000;
 }
 .appearance-lightbox::backdrop {
-  background: rgba(17, 1, 1, .88);
+  background: rgba(17, 1, 1, 0.88);
   backdrop-filter: blur(4px);
 }
 .appearance-lightbox > img {
@@ -406,7 +425,9 @@ main .gallery-thumb:focus-visible {
   border-radius: 50%;
   background: #fcefe9;
   color: #401c31;
-  font: bold 24px/1 Arial, sans-serif;
+  font:
+    bold 24px/1 Arial,
+    sans-serif;
   cursor: pointer;
   box-shadow: 2px 2px 0 #7a3b37;
   justify-content: center;
@@ -418,12 +439,14 @@ main .toggle-button {
   font-size: 14px;
   padding: 6px 12px;
   margin-bottom: 10px;
-  background:#fcefe9;
+  background: #fcefe9;
   color: #000;
-  border: 2px solid #FF746C;
+  border: 2px solid #ff746c;
   box-shadow: 3px 3px 0 #7a3b37;
   cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -438,21 +461,28 @@ main #trivia-list.fade-out {
   animation: fadeOut 0.5s forwards;
 }
 
-
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 main #trivia-list {
   margin-top: 10px;
   padding: 10px;
   background: #fcefe9;
-  border: 2px solid #FF746C;
+  border: 2px solid #ff746c;
   box-shadow: 3px 3px 0 #7a3b37;
 }
 main #trivia-list li {
@@ -464,7 +494,9 @@ main .trivia-wrap {
   display: grid;
   grid-template-rows: 0fr;
   visibility: hidden;
-  transition: grid-template-rows .4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s .4s;
+  transition:
+    grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s 0.4s;
 }
 main .trivia-wrap[hidden] {
   display: none;
@@ -473,12 +505,14 @@ main .trivia-wrap[hidden] {
 main .trivia-wrap.open {
   grid-template-rows: 1fr;
   visibility: visible;
-  transition: grid-template-rows .4s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+  transition:
+    grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
 }
 
 main .trivia-wrap > ul {
   overflow: hidden;
-  min-height: 0; 
+  min-height: 0;
 }
 main .center {
   display: flex;
@@ -487,13 +521,33 @@ main .center {
   gap: 10px;
 }
 
-main .toggle-button:hover  { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--shadow); }
-main .toggle-button:active { transform: translate(3px, 3px);   box-shadow: 0 0 0 var(--shadow); }
-main .toggle-button:focus-visible { outline: 3px dashed var(--shadow); outline-offset: 3px; }
-main .toggle-button[aria-expanded="true"] { background: var(--paper); color: var(--accent); }
+main .toggle-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+main .toggle-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--shadow);
+}
+main .toggle-button:focus-visible {
+  outline: 3px dashed var(--shadow);
+  outline-offset: 3px;
+}
+main .toggle-button[aria-expanded="true"] {
+  background: var(--paper);
+  color: var(--accent);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .stars span, .background { animation: none; }
-  main .bar i { animation: none; }
-  main .trivia-wrap, main .trivia-wrap.open { transition-duration: 0.01ms; }
+  .stars span,
+  .background {
+    animation: none;
+  }
+  main .bar i {
+    animation: none;
+  }
+  main .trivia-wrap,
+  main .trivia-wrap.open {
+    transition-duration: 0.01ms;
+  }
 }

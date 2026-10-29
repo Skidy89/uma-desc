@@ -105,12 +105,16 @@ appearanceLightbox.addEventListener("click", (event) => {
 
 const el = document.querySelectorAll("[data-sound]");
 const superluck = Math.random() < 0.35;
+
 if (superluck) {
   console.log("super luckyyy!");
   function replaceChibisLuck() {
     const stars = document.querySelectorAll(".stars");
+    
     stars.forEach((star) => {
       const chibi = star.querySelector("img");
+      // not messing with innerhtml.
+      console.log(`replacing ${chibi.src} with trash.png`);
       if (chibi) {
         chibi.src = `../../images/goldship/trash.png`;
       }
